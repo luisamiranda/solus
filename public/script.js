@@ -2,7 +2,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-var goodMoods = ['well', 'great', 'pretty good']
+var goodMoods = ['well', 'great', 'pretty good', 'happy']
 var badMoods = ['depressed', 'sad', 'tired', 'stressed']
 var vague = ['okay', 'fine']
 
@@ -23,9 +23,6 @@ recognition.maxAlternatives = 1;
 var diagnostic = document.querySelector('.output');
 var bg = document.querySelector('body');
 bg.style.background = "url(img/solace-default.png) center";
-var hints = document.querySelector('.hints');
-
-hints.innerHTML = 'Describe your mood to change the background of the app.';
 
 document.body.onclick = function() {
   recognition.start();
@@ -45,10 +42,12 @@ recognition.onresult = function(event) {
   var last = event.results.length - 1;
   var input = event.results[last][0].transcript;
 
-  diagnostic.textContent = 'Result received: ' + input + '.';
+  diagnostic.textContent = 'I heard: ' + input + '.';
   if (goodMoods.includes(input)) {
     bg.style.background = "url(img/dusk-1.jpg)";
   } else if (badMoods.includes(input)) {
+    bg.style.background = "url(img/midday-2.jpg)";
+  } else if (vague.includes(input)) {
     bg.style.background = "url(img/sunrise-4.jpg)";
   }
   console.log('Confidence: ' + event.results[0][0].confidence);
