@@ -1,6 +1,4 @@
-/*
- * Globals
- */
+/* Globals */
 
 /* Links */
 a,
@@ -20,14 +18,16 @@ a:hover {
 }
 
 
-/*
- * Base structure
- */
+/* Base structure */
 
 html,
 body {
   height: 100%;
   background: #333;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body {
   color: #fff;
@@ -59,9 +59,7 @@ body {
 }
 
 
-/*
- * Header
- */
+/* Header */
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -105,9 +103,7 @@ body {
 }
 
 
-/*
- * Cover
- */
+/* Cover */
 
 .cover {
   padding: 0 20px;
@@ -118,18 +114,14 @@ body {
 }
 
 
-/*
- * Footer
- */
+/* Footer */
 
 .mastfoot {
   color: #fff;
 }
 
 
-/*
- * Affix and center
- */
+/* Affix and center */
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */

@@ -1,6 +1,6 @@
 {
   "name": "solus",
-  "description": "Web Speech API  speech recognition demo",
+  "description": "a homepage that cares",
   "type": "privileged",
   "launch_path": "/index.html",
   "icons": {
@@ -8,8 +8,8 @@
     "128": "/img/sol_128.png"
   },
   "developer": {
-    "name": "Chris Mills",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"
+    "name": "Luisa de Miranda",
+    "url": ""
   },
   "default_locale": "en",
   "permissions": {

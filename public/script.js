@@ -27,10 +27,9 @@ var synth = window.speechSynthesis;
 var voices = synth.getVoices();
 
 function say (response) {
-  //event.preventDefault();
 
   var utterance = new SpeechSynthesisUtterance(response);
-  utterance.voice = voices[0];
+  utterance.voice = voices[1];
   utterance.pitch = 1;
   utterance.rate = 1;
   synth.speak(utterance);
@@ -40,7 +39,6 @@ function say (response) {
   //   console.log('Speech paused at character ' + event.charIndex + ' of "' +
   //   event.utterance.text + '", which is "' + char + '".');
   // }
-  //response.blur();
 }
 
 /*--------------- Define Page Outputs ---------------*/
@@ -61,21 +59,19 @@ recognition.onresult = function(event) {
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
   // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
   // Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
-
   var last = event.results.length - 1;
   var input = event.results[last][0].transcript;
   var response = "";
 
   diagnostic.textContent = 'I heard: ' + input + '.';
   if (goodMoods.includes(input)) {
-    response = "Glad you're well."
-    bg.style.background = "url(img/dusk-1.jpg)";
-  } else if (badMoods.includes(input)) {
-    bg.style.background = "url(img/midday-2.jpg)";
-    response = "I'm sorry. Feel better.'"
-  } else if (vague.includes(input)) {
+    response = "Glad you're well.";
     bg.style.background = "url(img/sunrise-4.jpg)";
-    response = "Tell me more."
+  } else if (badMoods.includes(input)) {
+    response = "I'm sorry. Feel better.";
+    bg.style.background = "url(img/midday-2.jpg)";
+  } else if (vague.includes(input)) {
+    response = "Tell me more.";
   }
   console.log('Confidence: ' + event.results[0][0].confidence);
   say(response);
