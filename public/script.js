@@ -48,6 +48,9 @@ var diagnostic = document.querySelector('.output');
 var bg = document.querySelector('body');
 bg.style.background = "url(img/solace-default.png) center";
 
+/*--------------- Start Interaction! ---------------*/
+say("How are you? Click to speak.");
+
 document.body.onclick = function() {
   recognition.start();
   console.log('Ready to receive.');
@@ -65,9 +68,11 @@ recognition.onresult = function(event) {
 
   diagnostic.textContent = 'I heard: ' + input + '.';
   if (goodMoods.includes(input)) {
+    response = "Glad you're well."
     bg.style.background = "url(img/dusk-1.jpg)";
   } else if (badMoods.includes(input)) {
     bg.style.background = "url(img/midday-2.jpg)";
+    response = "I'm sorry. Feel better.'"
   } else if (vague.includes(input)) {
     bg.style.background = "url(img/sunrise-4.jpg)";
     response = "Tell me more."
