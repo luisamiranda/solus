@@ -19,4 +19,7 @@ In the future, Solus would like to:
 * offer additional widgets such as weather
 * have a user panel to refine voice style, et al.
 
+# URLs
 
+* github - https://github.com/luisamiranda/solus
+* heroku - https://solus-cares.herokuapp.com/
