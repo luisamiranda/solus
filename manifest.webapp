@@ -1,0 +1,23 @@
+{
+  "name": "solus",
+  "description": "Web Speech API  speech recognition demo",
+  "type": "privileged",
+  "launch_path": "/index.html",
+  "icons": {
+    "512": "/img/sol_512.png",
+    "128": "/img/sol_128.png"
+  },
+  "developer": {
+    "name": "Chris Mills",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"
+  },
+  "default_locale": "en",
+  "permissions": {
+    "audio-capture" : {
+      "description" : "Audio capture"
+    },
+    "speech-recognition" : {
+      "description" : "Speech recognition"
+    }
+  }
+}
