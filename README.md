@@ -4,7 +4,7 @@ A homepage that cares: Solus asks how your day is going, and tries to complement
 
 # Uses the Web Speech API
 
-Solus uses modern computer (and mobile) browsers' access to microphone and speakers to talk to its user. It takes in the results and compares them to gramar sets about mood to set the background.
+Solus uses modern computer (and mobile) browsers' access to microphone and speakers to talk to its user. It takes in the results and compares them to grammar sets about mood to set the background.
 
 # Future Roadmap
 

@@ -4,14 +4,20 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
 /*--------------- Create Grammar/Vocab ---------------*/
-var goodMoods = ['well', 'great', 'pretty good', 'happy']
-var badMoods = ['depressed', 'sad', 'tired', 'stressed']
-var vague = ['okay', 'fine']
+var greatMoods = ['great', 'I\'m doing great', 'awesome', 'I\'m excited', 'I\'m happy'];
+var goodMoods = ['well', 'I\'m well', 'very well, thanks','good', 'I\'m good', 'pretty good'];
+var sadMoods = ['depressed', 'I\'m depressed', 'sad', 'I\'m sad', 'been better', 'I\'ve been better'];
+var tiredMoods = ['tired', 'I\'m tired', 'I\'m so tired', 'exhausted', 'I\'m exhausted', 'sleepy', 'I\'m sleepy'];
+var tenseMoods = ['stressed', 'I\'m stressed', 'anxious', 'I\'m anxious', 'worried', 'I\'m worried'];
+var vague = ['okay', 'I\'m okay', 'fine', 'I\'m fine', 'fine, thank you', 'not bad', 'not so bad', 'not too bad', 'eh', 'meh'];
 
 var grammar = '#JSGF V1.0; grammar colors; public <goodMoods> = ' +
-  goodMoods.join(' | ') + ' ; #JSGF V1.0; grammar colors; public <badMoods> = ' +
-  badMoods.join(' | ') + ' ; #JSGF V1.0; grammar colors; public <vague> = ' +
-  vague.join(' | ') + ' ;'
+  goodMoods.join(' | ') + ' ; #JSGF V1.0; grammar colors; public <sadMoods> = ' +
+  sadMoods.join(' | ') + ' ; #JSGF V1.0; grammar colors; public <vague> = ' +
+  vague.join(' | ') + ' ; #JSGF V1.0; grammar colors; public <greatMoods> = ' +
+  greatMoods.join(' | ') + ' ; #JSGF V1.0; grammar colors; public <tenseMoods> = ' +
+  tenseMoods.join(' | ') + ' ; #JSGF V1.0; grammar colors; public <tiredMoods> = ' +
+  tiredMoods.join(' | ') + ' ;'
 
 /*-------------- Initialize Speech Rec -------------*/
 var recognition = new SpeechRecognition();
@@ -64,14 +70,23 @@ recognition.onresult = function(event) {
   var response = "";
 
   diagnostic.textContent = 'I heard: ' + input + '.';
-  if (goodMoods.includes(input)) {
-    response = "Glad you're well.";
-    bg.style.background = "url(img/sunrise-4.jpg)";
-  } else if (badMoods.includes(input)) {
-    response = "I'm sorry. Feel better.";
+  if (greatMoods.includes(input)) {
+    response = "I'm happy to hear that. I hope you like this!";
     bg.style.background = "url(img/midday-2.jpg)";
+  } else if (goodMoods.includes(input)) {
+    response = "I'm glad. Enjoy this painting of a sunrise.";
+    bg.style.background = "url(img/sunrise-4.jpg)";
+  } else if (sadMoods.includes(input)) {
+    response = "I'm sorry. Maybe this will make you feel better.";
+    bg.style.background = "url(img/sunrise-1.jpg)";
+  } else if (tiredMoods.includes(input)) {
+    response = "Here's something energizing";
+    bg.style.background = "url(img/midday-1.jpg)";
+  } else if (tenseMoods.includes(input)) {
+    response = "I'm sorry. Here's something I find calming.";
+    bg.style.background = "url(img/dusk-2.jpg)";
   } else if (vague.includes(input)) {
-    response = "Tell me more.";
+    response = "Can you tell me more?";
   }
   console.log('Confidence: ' + event.results[0][0].confidence);
   say(response);
