@@ -7,7 +7,7 @@
    "icon": "img/sol_128.png"
   },
   "scripts": {
-    "start": "nodemon start.js",
+    "start": "node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luisa de Miranda",

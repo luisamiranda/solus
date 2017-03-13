@@ -2,6 +2,9 @@ const express = require('express');
 
 const app = express();
 
+//process.env.HOME
+//process.env.SESSION_SECRET
+
 module.exports = app
   .use(express.static(__dirname + '/public'))
   .get('/', (req, res, next) => res.render('index'))
