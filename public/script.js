@@ -50,6 +50,7 @@ function say (response) {
 /*--------------- Define Page Outputs ---------------*/
 var diagnostic = document.querySelector('.output');
 var bg = document.querySelector('body');
+var audio = document.getElementById('player')
 bg.style.background = "url(img/solace-default.png) center";
 
 /*--------------- Start Interaction! ---------------*/
@@ -73,9 +74,11 @@ recognition.onresult = function(event) {
   if (greatMoods.includes(input)) {
     response = "I'm happy to hear that. I hope you like this!";
     bg.style.background = "url(img/midday-2.jpg)";
+    audio.currentSrc = "audio/Its_Not_Night_Its_Space_-_02_-_Starry_Wisdom.mp3"
   } else if (goodMoods.includes(input)) {
     response = "I'm glad. Enjoy this painting of a sunrise.";
     bg.style.background = "url(img/sunrise-4.jpg)";
+    audio.currentSrc = "audio/Iva_Bittova_-_04_-_Improvisation_4.mp3"
   } else if (sadMoods.includes(input)) {
     response = "I'm sorry. Maybe this will make you feel better.";
     bg.style.background = "url(img/sunrise-1.jpg)";

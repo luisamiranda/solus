@@ -35,6 +35,16 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
+audio
+{
+background: rgba(255, 255, 255, .4);
+-webkit-box-shadow: 4px 4px 8px rgba(0,0, 0, 0.3);
+-moz-box-shadow: 4px 4px 8px rgba(0,0, 0, 0.3);
+box-shadow: 4px 4px 8px rgba(0,0, 0, 0.3);
+-moz-border-radius:7px 7px 7px 7px ;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
+}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
