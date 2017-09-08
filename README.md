@@ -10,7 +10,7 @@ Solus uses modern computer (and mobile) browsers' access to microphone and speak
 
 In the future, Solus would like to:
 
-* pull the user's itunes music and create a mood-based station
+* pull the user's spotify or itunes music and create a mood-based station
 * open with each new tab
 * subtly change colours with the time of day
 * remember/learn about an individual over time
